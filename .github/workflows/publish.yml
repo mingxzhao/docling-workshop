@@ -54,7 +54,7 @@ jobs:
         uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5.0.0
 
       - name: 'Setup uv'
-        uses: astral-sh/setup-uv@bd01e18f51369d5a26f1651c3cb451d3417e3bba # v6.3.1
+        uses: astral-sh/setup-uv@d9e0f98d3fc6adb07d1e3d37f3043649ddad06a1 # v6.5.0
         with:
           python-version: 3.12
           enable-cache: false
