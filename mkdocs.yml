@@ -5,21 +5,20 @@ site_author: IBM Research
 
 # Repository
 repo_name: docling-workshop
-repo_url: https://ibm-granite-community.github.io/docling-workshop
+repo_url: https://github.com/ibm-granite-community/docling-workshop
 edit_uri: edit/main/docs
 
 # Navigation
 nav:
   - Welcome:
     - About the workshop: README.md
-  # - Workshop:
-  #   - Lab 0. Pre-work: pre-work/README.md
-  #   - Lab 1. Summarize a text document with Granite: lab-1/README.md
-  #   - Lab 2. Retrieval Augmented Generation (RAG) with Langchain: lab-2/README.md
-  #   - Lab 3. Energy Demand Forecasting with Granite Timeseries (TTM): lab-3/README.md
-  #   - Lab 4. Generating Bash Code with Granite Code: lab-4/README.md
-  # - References:
-  #   - IBM Granite Community: https://github.com/ibm-granite-community
+  - Workshop:
+     - Lab 0. Pre-work: pre-work/README.md
+     - Lab 1. Document Conversion with Docling: lab-1/README.md
+     - Lab 2. Chunking and Vectorization with Docling: lab-2/README.md
+     - Lab 3. Multimodal RAG with Docling: lab-3/README.md
+  - References:
+     - Docling Docs: https://docling-project.github.io/docling/
 
 
 ## DO NOT CHANGE BELOW THIS LINE
@@ -45,7 +44,10 @@ theme:
   palette:
     scheme: default
     primary: deep orange
-    accent: deep orange
+    accent: blue
+
+extra_css:
+  - "data:text/css,.md-header__button.md-logo img,.md-header__button.md-logo svg{height:2.5rem;width:auto;}.md-header__title{font-size:1.2rem;font-weight:500;}"
 
 # Plugins
 plugins:
@@ -67,7 +69,7 @@ extra:
       link: https://www.youtube.com/user/developerworks
     - icon: fontawesome/brands/dev
       link: https://dev.to/ibmdeveloper
-  colab_url: https://colab.research.google.com/github/IBM/granite-workshop
+  colab_url: https://colab.research.google.com/github/ibm-granite-community/docling-workshop/
 
 # Extensions
 markdown_extensions:
