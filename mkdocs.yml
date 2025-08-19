@@ -69,7 +69,7 @@ extra:
       link: https://www.youtube.com/user/developerworks
     - icon: fontawesome/brands/dev
       link: https://dev.to/ibmdeveloper
-  colab_url: https://colab.research.google.com/github/ibm-granite-community/docling-workshop/
+  colab_url: https://colab.research.google.com/github/ibm-granite-community/docling-workshop
 
 # Extensions
 markdown_extensions:
