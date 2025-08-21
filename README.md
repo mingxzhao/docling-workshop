@@ -2,7 +2,14 @@
 
 This is the Docling workshop hosted on GitHub Pages using Material for MkDocs. To view it online, go to:
 
-<https://ibm-granite-community.github.io/docling-workshop>
+[![Lab 1](https://badgen.net/badge/icon/github?icon=github&label=View%20on "View on GitHub")](https://github.com/mingxzhao/docling-workshop/blob/Pydata/notebooks/Docling_Lab1_code%20(1).ipynb){:target="_blank"}
+[![Lab 1](https://colab.research.google.com/assets/colab-badge.svg "Open In Colab")](https://github.com/mingxzhao/docling-workshop/blob/Pydata/notebooks/Docling_Lab1_code%20(1).ipynb){:target="_blank"}
+
+[![Lab 2](https://badgen.net/badge/icon/github?icon=github&label=View%20on "View on GitHub")](https://github.com/mingxzhao/docling-workshop/blob/Pydata/notebooks/Docling_Lab2_code%20(1).ipynb){:target="_blank"}
+[![Lab 2](https://colab.research.google.com/assets/colab-badge.svg "Open In Colab")](https://github.com/mingxzhao/docling-workshop/blob/Pydata/notebooks/Docling_Lab2_code%20(1).ipynb){:target="_blank"}
+
+[![Lab 3](https://badgen.net/badge/icon/github?icon=github&label=View%20on "View on GitHub")](https://github.com/mingxzhao/docling-workshop/blob/Pydata/notebooks/Docling_Lab3_code%20(1).ipynb){:target="_blank"}
+[![Lab 3](https://colab.research.google.com/assets/colab-badge.svg "Open In Colab")](https://github.com/mingxzhao/docling-workshop/blob/Pydata/notebooks/Docling_Lab3_code%20(1).ipynb){:target="_blank"}
 
 ## License & Authors
 
