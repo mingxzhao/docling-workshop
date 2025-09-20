@@ -18,8 +18,12 @@ This lab has two options for running. The first will be using Replicate, and the
 
 ## Lab
 
+With Replicate
+
 [![# Multimodal RAG with Docling Notebook - Replicate](https://badgen.net/badge/icon/github?icon=github&label=View%20on "View on GitHub")]({{ config.repo_url }}/blob/{{ git.commit }}/notebooks/RAG.ipynb){:target="_blank"}
 [![# Multimodal RAG with Docling Notebook - Replicate](https://colab.research.google.com/assets/colab-badge.svg "Open In Colab")]({{ extra.colab_url }}/blob/{{ git.commit }}/notebooks/RAG.ipynb){:target="_blank"}
+
+With LM Studio
 
 [![# Multimodal RAG with Docling Notebook - LM Studio](https://badgen.net/badge/icon/github?icon=github&label=View%20on "View on GitHub")]({{ config.repo_url }}/blob/{{ git.commit }}/notebooks/LM Studio RAG.ipynb){:target="_blank"}
 [![# Multimodal RAG with Docling Notebook - LM Studio](https://colab.research.google.com/assets/colab-badge.svg "Open In Colab")]({{ extra.colab_url }}/blob/{{ git.commit }}/notebooks/LM Studio RAG.ipynb){:target="_blank"}
