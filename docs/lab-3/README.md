@@ -14,7 +14,7 @@ In this lab we will combine the skills we learned in the two previous labs to bu
 
 This lab is a [Jupyter notebook](https://jupyter.org/). Please follow the instructions in [pre-work](../pre-work/README.md) to run the lab.
 
-This lab has two options for running. The first will be using Replicate, and the second will be using LM studio to run entirely locally.
+This lab has two options for running. The first will be using Replicate, and the second will be using LM Studio to run entirely locally.
 
 ## Lab
 
