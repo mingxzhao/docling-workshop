@@ -75,17 +75,17 @@ import httpx
 response = httpx.post(
     "http://localhost:5001/v1/convert/source",
     json={
-        "http_sources": [{"url": "https://arxiv.org/pdf/2501.17887"}],
+        "sources": [{"kind": "http", "url": "https://arxiv.org/pdf/2501.17887"}],
         "options": {
-            "to_formats": ["md"],
             "do_ocr": False,  # Set True if easyocr is installed
+            "pdf_backend": "dlparse_v2",
         }
     },
     timeout=120.0
 )
 
 result = response.json()
-print(result['md'][:500])
+print(result.get('md', '')[:500])
 ```
 
 ## Key API Endpoints
