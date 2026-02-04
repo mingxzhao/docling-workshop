@@ -1,0 +1,55 @@
+[project]
+name = "docling-workshop"
+version = "1.0.0"
+description = "Docling Workshop - Learn document processing with AI"
+requires-python = ">=3.10"
+readme = "README.md"
+license = {text = "Apache-2.0"}
+authors = [
+    {name = "Ming Zhao"}
+]
+keywords = ["docling", "document-processing", "ai", "rag", "workshop"]
+
+[project.urls]
+Homepage = "https://ibm-granite-community.github.io/docling-workshop"
+Repository = "https://github.com/ibm-granite-community/docling-workshop"
+
+[project.optional-dependencies]
+lab1 = [
+    "docling[vlm]",
+    "matplotlib",
+    "pillow",
+    "pandas",
+    "ipywidgets",
+    "python-dotenv",
+]
+lab2 = [
+    "docling",
+    "transformers",
+    "matplotlib",
+    "pillow",
+]
+lab3 = [
+    "docling",
+    "transformers",
+    "pillow",
+    "langchain-core>=0.3",
+    "langchain-huggingface",
+    "langchain-milvus",
+    "pymilvus[milvus_lite]",
+    "langchain-openai",
+    "matplotlib",
+]
+lab4 = [
+    "docling-serve",
+    "httpx",
+]
+all = [
+    "docling-workshop[lab1,lab2,lab3,lab4]",
+]
+dev = [
+    "jupyter",
+    "notebook",
+    "ipywidgets",
+    "pre-commit",
+]

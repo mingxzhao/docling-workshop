@@ -35,7 +35,7 @@ Running the lab notebooks locally on your computer requires the following steps:
 ### Local Prerequisites
 
 - Git
-- Python 3.11 or 3.12
+- Python 3.10, 3.11, 3.12, or 3.13
 
 ### Clone the Docling Workshop Repository
 
@@ -123,3 +123,71 @@ The labs require Granite models to be served by an AI model runtime so that the 
 1. Create a Replicate [API Token](https://replicate.com/account/api-tokens).
 
 1. Add your Replicate API Token to the Colab Secrets manager to securely store it. Open [Google Colab](https://colab.research.google.com) and click on the 🔑 Secrets tab in the left panel. Click "New Secret" and enter `REPLICATE_API_TOKEN` as the key, and paste your token into the value field. Toggle the button on the left to allow notebook access to the secret.
+
+## Local Model Inference Options
+
+For running models locally instead of using cloud services, you have two options:
+
+### Option 1: LM Studio
+
+[LM Studio](https://lmstudio.ai/) is a desktop application for running LLMs locally with an OpenAI-compatible API.
+
+1. Download and install [LM Studio](https://lmstudio.ai/) for your platform
+
+2. Download the Granite Vision model:
+    - Open LM Studio and go to the "Discover" tab
+    - Search for `granite-vision` or `granite-3.3`
+    - Download a model (e.g., `granite-vision-3.3-2b`)
+
+3. Start the local server:
+    - Go to the "Local Server" tab
+    - Select your downloaded model
+    - Click "Start Server"
+    - The server runs at `http://localhost:1234` by default
+
+4. Use in notebooks with the OpenAI-compatible endpoint:
+    ```python
+    from langchain_openai import ChatOpenAI
+
+    model = ChatOpenAI(
+        model_name="granite-vision-3.3-2b",
+        api_key="none",
+        base_url="http://localhost:1234/v1",
+    )
+    ```
+
+### Option 2: Ollama
+
+[Ollama](https://ollama.ai/) is a lightweight tool for running LLMs locally from the command line.
+
+1. Download and install [Ollama](https://ollama.ai/) for your platform
+
+2. Pull the Granite Vision model:
+    ```shell
+    ollama pull granite3.2-vision:2b
+    ```
+
+3. Ollama runs automatically and exposes an OpenAI-compatible API at `http://localhost:11434`
+
+4. Use in notebooks:
+    ```python
+    from docling.datamodel.pipeline_options import PictureDescriptionApiOptions
+
+    options = PictureDescriptionApiOptions(
+        url="http://localhost:11434/v1/chat/completions",
+        params={"model": "granite3.2-vision:2b"},
+    )
+    ```
+
+### Hardware Recommendations
+
+For the best local inference experience:
+
+| Component | Minimum | Recommended |
+|-----------|---------|-------------|
+| RAM | 8 GB | 16+ GB |
+| GPU VRAM | - | 4+ GB |
+| Storage | 10 GB free | 20+ GB free |
+
+!!! tip "Apple Silicon"
+    If you have a Mac with Apple Silicon (M1/M2/M3), both LM Studio and Ollama can leverage the Metal GPU for accelerated inference.

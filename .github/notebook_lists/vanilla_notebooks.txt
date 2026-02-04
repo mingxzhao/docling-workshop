@@ -1,3 +1,4 @@
 # Notebooks to test
+notebooks/Conversion.ipynb
 notebooks/Chunking.ipynb
 notebooks/RAG.ipynb
