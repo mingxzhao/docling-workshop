@@ -14,13 +14,14 @@ This guide covers common issues you might encounter during the workshop and thei
 
 **Problem**: Assertion error about Python version
 
-```
+```text
 AssertionError: Use Python 3.10, 3.11, 3.12, or 3.13 to run this notebook.
 ```
 
 **Solution**:
 
 1. Check your Python version:
+
     ```shell
     python3 --version
     ```
@@ -31,6 +32,7 @@ AssertionError: Use Python 3.10, 3.11, 3.12, or 3.13 to run this notebook.
     - Windows: Download from [python.org](https://www.python.org/downloads/)
 
 3. Create a new virtual environment with the correct version:
+
     ```shell
     python3.12 -m venv venv
     source venv/bin/activate
@@ -48,6 +50,7 @@ AssertionError: Use Python 3.10, 3.11, 3.12, or 3.13 to run this notebook.
     - Windows: Install [Visual Studio Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/)
 
 2. Try using `uv` for faster, more reliable installs:
+
     ```shell
     pip install uv
     uv pip install docling
@@ -62,6 +65,7 @@ AssertionError: Use Python 3.10, 3.11, 3.12, or 3.13 to run this notebook.
 1. Close other applications to free memory
 2. Install packages one at a time instead of all at once
 3. Use `--no-cache-dir` flag:
+
     ```shell
     pip install --no-cache-dir docling
     ```
@@ -77,6 +81,7 @@ AssertionError: Use Python 3.10, 3.11, 3.12, or 3.13 to run this notebook.
 1. Check available memory - VLM models require 4-8 GB RAM
 2. Try a smaller model first
 3. For Apple Silicon, ensure MLX backend is used:
+
     ```python
     from docling.datamodel.pipeline_options import smoldocling_vlm_mlx_conversion_options
     ```
@@ -88,6 +93,7 @@ AssertionError: Use Python 3.10, 3.11, 3.12, or 3.13 to run this notebook.
 **Solution**:
 
 1. Verify the server is running:
+
     ```shell
     curl http://localhost:11434/api/tags  # Ollama
     curl http://localhost:1234/v1/models  # LM Studio
@@ -105,6 +111,7 @@ AssertionError: Use Python 3.10, 3.11, 3.12, or 3.13 to run this notebook.
 **Solution**:
 
 1. Try enabling OCR for scanned documents:
+
     ```python
     PdfPipelineOptions(do_ocr=True)
     ```
@@ -120,11 +127,13 @@ AssertionError: Use Python 3.10, 3.11, 3.12, or 3.13 to run this notebook.
 
 1. Process fewer pages at a time
 2. Reduce image resolution:
+
     ```python
     PdfPipelineOptions(images_scale=1.0)  # Instead of 2.0
     ```
 
 3. Disable features you don't need:
+
     ```python
     PdfPipelineOptions(
         generate_page_images=False,
@@ -142,6 +151,7 @@ AssertionError: Use Python 3.10, 3.11, 3.12, or 3.13 to run this notebook.
 2. Reduce image quality for faster processing
 3. Use a GPU if available
 4. For large documents, save JSON output and reuse:
+
     ```python
     doc.save_as_json("document.json")
     # Later:
@@ -167,6 +177,7 @@ AssertionError: Use Python 3.10, 3.11, 3.12, or 3.13 to run this notebook.
 **Solution**:
 
 1. Verify your token is set:
+
     ```shell
     echo $REPLICATE_API_TOKEN
     ```
@@ -184,6 +195,7 @@ AssertionError: Use Python 3.10, 3.11, 3.12, or 3.13 to run this notebook.
 **Solution**:
 
 1. Use a fresh database file:
+
     ```python
     import tempfile
     db_file = tempfile.NamedTemporaryFile(suffix=".db", delete=False).name
@@ -212,6 +224,7 @@ AssertionError: Use Python 3.10, 3.11, 3.12, or 3.13 to run this notebook.
 **Solution**:
 
 1. Install the widget extension:
+
     ```shell
     pip install ipywidgets
     jupyter nbextension enable --py widgetsnbextension
