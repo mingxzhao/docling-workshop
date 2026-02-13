@@ -14,3 +14,10 @@ repos:
     rev: v0.20.0
     hooks:
     - id: markdownlint-cli2
+  - repo: 'https://github.com/facelessuser/pyspelling.git'
+    rev: '2.12.1'
+    hooks:
+      - id: 'pyspelling'
+        args: [
+          "--config", ".spellcheck.yml"
+        ]
