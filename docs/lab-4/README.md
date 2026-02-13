@@ -29,7 +29,7 @@ By the end of this lab, you will:
 While the Python library is great for scripts and notebooks, **docling-serve** enables:
 
 | Feature | Benefit |
-|---------|---------|
+| --------- | --------- |
 | REST API | Use Docling from any language |
 | Scalability | Handle concurrent requests |
 | Microservices | Integrate with existing infrastructure |
@@ -91,7 +91,7 @@ print(result.get('md', '')[:500])
 ## Key API Endpoints
 
 | Endpoint | Method | Description |
-|----------|--------|-------------|
+| ---------- | -------- | ------------- |
 | `/health` | GET | Health check |
 | `/v1/convert/source` | POST | Convert from URL |
 | `/v1/convert/file` | POST | Convert uploaded file |

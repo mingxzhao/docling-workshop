@@ -146,6 +146,7 @@ For running models locally instead of using cloud services, you have two options
     - The server runs at `http://localhost:1234` by default
 
 4. Use in notebooks with the OpenAI-compatible endpoint:
+
     ```python
     from langchain_openai import ChatOpenAI
 
@@ -163,6 +164,7 @@ For running models locally instead of using cloud services, you have two options
 1. Download and install [Ollama](https://ollama.ai/) for your platform
 
 2. Pull the Granite Vision model:
+
     ```shell
     ollama pull granite3.2-vision:2b
     ```
@@ -170,6 +172,7 @@ For running models locally instead of using cloud services, you have two options
 3. Ollama runs automatically and exposes an OpenAI-compatible API at `http://localhost:11434`
 
 4. Use in notebooks:
+
     ```python
     from docling.datamodel.pipeline_options import PictureDescriptionApiOptions
 
@@ -184,7 +187,7 @@ For running models locally instead of using cloud services, you have two options
 For the best local inference experience:
 
 | Component | Minimum | Recommended |
-|-----------|---------|-------------|
+| ----------- | --------- | ------------- |
 | RAM | 8 GB | 16+ GB |
 | GPU VRAM | - | 4+ GB |
 | Storage | 10 GB free | 20+ GB free |
