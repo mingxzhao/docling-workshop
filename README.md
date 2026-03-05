@@ -10,3 +10,7 @@ See the [LICENSE](./LICENSE) file for the details of the license.
 
 - Authors:
   - [Ming Zhao](https://github.com/mingxzhao)
+
+REPLICATE API KEY FOR SCALE:
+
+r8_J8XkqrquL1xvG471HnzSTe3ZjYOWo8p0JLYn8
