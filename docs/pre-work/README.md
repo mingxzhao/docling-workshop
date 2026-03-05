@@ -46,9 +46,30 @@ git clone https://github.com/ibm-granite-community/docling-workshop.git
 cd docling-workshop
 ```
 
-[Lab 3: Multimodal RAG with Visual Grounding using Docling](../lab-3/README.md) requires Replicate.
+[Lab 3: Multimodal RAG with Visual Grounding using Docling](../lab-3/README.md) requires either Replicate or Ollama to serve the Granite AI models.
 
-#### Replicate AI Cloud Platform
+#### Option A: Ollama (Local)
+
+[Ollama](https://ollama.ai/) is a lightweight tool for running LLMs locally from the command line. This is the recommended option if you want to run everything locally without cloud dependencies.
+
+1. Download and install [Ollama](https://ollama.ai/) for your platform
+
+1. Pull the required Granite models:
+
+    ```shell
+    ollama pull granite3.3:8b
+    ollama pull granite3.2-vision:2b
+    ```
+
+1. Verify Ollama is running:
+
+    ```shell
+    curl http://localhost:11434/v1/models
+    ```
+
+    If you installed Ollama via the macOS app, it runs automatically in the background. Otherwise, run `ollama serve`.
+
+#### Option B: Replicate (Cloud)
 
 [Replicate](https://replicate.com/) is a cloud platform that will host and serve AI models for you.
 
@@ -163,22 +184,24 @@ For running models locally instead of using cloud services, you have two options
 
 1. Download and install [Ollama](https://ollama.ai/) for your platform
 
-2. Pull the Granite Vision model:
+2. Pull the Granite models:
 
     ```shell
+    ollama pull granite3.3:8b
     ollama pull granite3.2-vision:2b
     ```
 
 3. Ollama runs automatically and exposes an OpenAI-compatible API at `http://localhost:11434`
 
-4. Use in notebooks:
+4. Use in notebooks with the OpenAI-compatible endpoint:
 
     ```python
-    from docling.datamodel.pipeline_options import PictureDescriptionApiOptions
+    from langchain_openai import ChatOpenAI
 
-    options = PictureDescriptionApiOptions(
-        url="http://localhost:11434/v1/chat/completions",
-        params={"model": "granite3.2-vision:2b"},
+    model = ChatOpenAI(
+        model_name="granite3.3:8b",
+        api_key="none",
+        base_url="http://localhost:11434/v1",
     )
     ```
 
