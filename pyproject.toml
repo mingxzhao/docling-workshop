@@ -33,8 +33,11 @@ lab3 = [
     "docling",
     "transformers",
     "pillow",
+    "langchain>=0.3",
     "langchain-core>=0.3",
+    "langchain-community",
     "langchain-huggingface",
+    "sentence-transformers",
     "langchain-milvus",
     "pymilvus[milvus_lite]",
     "langchain-openai",
@@ -44,8 +47,19 @@ lab4 = [
     "docling-serve",
     "httpx",
 ]
+lab5 = [
+    "docling",
+    "anthropic>=0.40.0",
+    "PyPDF2>=3.0.0",
+    "httpx",
+]
+lab6 = [
+    "docling-mcp",
+    "mcp",
+    "httpx",
+]
 all = [
-    "docling-workshop[lab1,lab2,lab3,lab4]",
+    "docling-workshop[lab1,lab2,lab3,lab4,lab5,lab6]",
 ]
 dev = [
     "jupyter",

@@ -17,6 +17,7 @@ By the end of this workshop, you will be able to use Docling to:
 * Create a transparent and verifiable multimodal [RAG](https://research.ibm.com/blog/retrieval-augmented-generation-RAG) application
 * Deploy Docling as a scalable REST API service
 * Compare token costs for PDF Q&A with and without Docling preprocessing
+* Integrate Docling as a tool for AI agents using the Model Context Protocol (MCP)
 
 About this workshop
 
@@ -36,6 +37,7 @@ The introductory page of the workshop is broken down into the following sections
 | [Lab 3: Multimodal RAG with Docling](lab-3/README.md) | Building a verifiable multimodal RAG system |
 | [Lab 4: Docling as a Service](lab-4/README.md) | Deploy Docling as a REST API service |
 | [Lab 5: Token Cost Comparison](lab-5/README.md) | Compare token costs for PDF Q&A with and without Docling |
+| [Lab 6: Docling + MCP for AI Agents](lab-6/README.md) | Expose Docling tools to AI agents via MCP |
 
 ## Technology Used
 
