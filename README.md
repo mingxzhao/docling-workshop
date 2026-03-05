@@ -13,4 +13,4 @@ See the [LICENSE](./LICENSE) file for the details of the license.
 
 REPLICATE API KEY FOR SCALE:
 
-r8_J8XkqrquL1xvG471HnzSTe3ZjYOWo8p0JLYn8
+r8_Q  DIfq2XM6X31wrNn1  CfjmSgZaHt3VJ  O25P0c  W
