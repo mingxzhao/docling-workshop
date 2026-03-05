@@ -14,7 +14,7 @@ In this lab we will combine the skills we learned in the two previous labs to bu
 
 This lab is a [Jupyter notebook](https://jupyter.org/). Please follow the instructions in [pre-work](../pre-work/README.md) to run the lab.
 
-This lab has two options for running. The first will be using Replicate, and the second will be using LM Studio to run entirely locally.
+This lab has two options for running. The first will be using Replicate, and the second will be using Ollama to run entirely locally.
 
 ## Lab
 
@@ -23,10 +23,10 @@ With Replicate
 [![# Multimodal RAG with Docling Notebook - Replicate](https://badgen.net/badge/icon/github?icon=github&label=View%20on "View on GitHub")]({{ config.repo_url }}/blob/{{ git.commit }}/notebooks/RAG.ipynb){:target="_blank"}
 [![# Multimodal RAG with Docling Notebook - Replicate](https://colab.research.google.com/assets/colab-badge.svg "Open In Colab")]({{ extra.colab_url }}/blob/{{ git.commit }}/notebooks/RAG.ipynb){:target="_blank"}
 
-With LM Studio
+With Ollama
 
-[![# Multimodal RAG with Docling Notebook - LM Studio](https://badgen.net/badge/icon/github?icon=github&label=View%20on "View on GitHub")]({{ config.repo_url }}/blob/{{ git.commit }}/notebooks/LM Studio RAG.ipynb){:target="_blank"}
-[![# Multimodal RAG with Docling Notebook - LM Studio](https://colab.research.google.com/assets/colab-badge.svg "Open In Colab")]({{ extra.colab_url }}/blob/{{ git.commit }}/notebooks/LM Studio RAG.ipynb){:target="_blank"}
+[![# Multimodal RAG with Docling Notebook - Ollama](https://badgen.net/badge/icon/github?icon=github&label=View%20on "View on GitHub")]({{ config.repo_url }}/blob/{{ git.commit }}/notebooks/Ollama RAG.ipynb){:target="_blank"}
+[![# Multimodal RAG with Docling Notebook - Ollama](https://colab.research.google.com/assets/colab-badge.svg "Open In Colab")]({{ extra.colab_url }}/blob/{{ git.commit }}/notebooks/Ollama RAG.ipynb){:target="_blank"}
 
 To run the notebook from your command line in Jupyter using the active virtual environment from the [pre-work](../pre-work/README.md#install-jupyter), run:
 
