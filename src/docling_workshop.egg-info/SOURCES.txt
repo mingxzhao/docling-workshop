@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+src/docling_workshop.egg-info/PKG-INFO
+src/docling_workshop.egg-info/SOURCES.txt
+src/docling_workshop.egg-info/dependency_links.txt
+src/docling_workshop.egg-info/requires.txt
+src/docling_workshop.egg-info/top_level.txt
