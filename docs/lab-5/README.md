@@ -29,7 +29,7 @@ By the end of this lab, you will:
 When using Claude for PDF Q&A, you have two options:
 
 | Approach | How It Works | Token Impact |
-|----------|-------------|--------------|
+| ---------- | ------------- | -------------- |
 | **Direct Upload** | Claude processes each page as an image + text | ~1,500-3,000 tokens per page |
 | **Docling Preprocessing** | Extract text first, send only the text to Claude | Typically fewer tokens for text-heavy documents |
 
@@ -61,7 +61,7 @@ jupyter notebook notebooks/Token_Cost_Comparison.ipynb
 ## When to Use Each Approach
 
 | Use Direct Upload When... | Use Docling Preprocessing When... |
-|--------------------------|----------------------------------|
+| -------------------------- | ---------------------------------- |
 | Document is image-heavy (diagrams, charts) | Document is primarily text |
 | Quick one-off questions | Repeated queries on the same document |
 | Visual layout matters for understanding | Cost optimization is important |

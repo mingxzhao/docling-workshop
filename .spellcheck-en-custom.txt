@@ -1,3 +1,4 @@
+Anthropic
 backend
 cd
 colab
@@ -5,13 +6,17 @@ Colab
 config
 docling
 Docling
+Docling's
 ibm
 ipynb
 ipywidgets
 JSON
 Jupyter
+LLM
 LM
 localhost
+mcp
+MCP
 Microservices
 Milvus
 MLX
@@ -22,8 +27,13 @@ PDFs
 png
 pre
 Pre
+preprocessed
+preprocessing
+Preprocessing
 repo
 scalable
+SDK
+SDK's
 SmolDocling
 TPU
 url

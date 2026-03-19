@@ -87,3 +87,5 @@ tags
 venv*
 dictionary.dic
 .ipynb_checkpoints/
+
+notebooks/output/
