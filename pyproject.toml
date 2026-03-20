@@ -38,8 +38,8 @@ lab3 = [
     "langchain-community",
     "langchain-huggingface",
     "sentence-transformers",
-    "langchain-milvus",
-    "pymilvus[milvus_lite]",
+    "langchain-chroma",
+    "chromadb",
     "langchain-openai",
     "matplotlib",
 ]
