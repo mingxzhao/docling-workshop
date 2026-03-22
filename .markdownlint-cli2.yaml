@@ -23,3 +23,4 @@ ignores:
   - "tests/**"
   - "venv/**"
   - ".github/ISSUE_TEMPLATE/**"
+  - "notebooks/output/**"
