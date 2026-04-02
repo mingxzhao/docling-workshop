@@ -51,7 +51,7 @@ jobs:
 
       - name: 'Setup Pages'
         if: ${{ github.event_name != 'pull_request' }}
-        uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5.0.0
+        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
 
       - name: 'Setup uv'
         uses: astral-sh/setup-uv@eac588ad8def6316056a12d4907a9d4d84ff7a3b # v7.3.0
