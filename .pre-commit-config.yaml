@@ -11,7 +11,7 @@ repos:
           "--keep-metadata-keys", "cell.metadata.collapsed cell.metadata.scrolled",
         ]
   - repo: https://github.com/DavidAnson/markdownlint-cli2
-    rev: v0.21.0
+    rev: v0.22.0
     hooks:
     - id: markdownlint-cli2
   - repo: 'https://github.com/facelessuser/pyspelling.git'
@@ -19,5 +19,5 @@ repos:
     hooks:
       - id: 'pyspelling'
         args: [
-          "--config", ".spellcheck.yml"
+          "--config", ".spellcheck.yaml"
         ]
