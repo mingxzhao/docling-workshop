@@ -1,10 +1,11 @@
 ---
-title: Lab 6 - Docling + MCP for AI Agents
+title: Lab 6. Docling + MCP for AI Agents
 description: Use Docling as a tool for AI agents via the Model Context Protocol
 logo: images/DoclingDuck.png
+notebook: notebooks/MCP_Agents.ipynb
 ---
 
-# Lab 6: Docling + MCP for AI Agents
+# Docling + MCP for AI Agents
 
 In this lab, you'll learn how to expose Docling's document processing capabilities to AI agents using the **Model Context Protocol (MCP)** with the official `docling-mcp` package.
 
@@ -37,26 +38,27 @@ In Lab 4, *you* wrote code to call the Docling REST API. With MCP, the *AI agent
 
 ## Running the Lab
 
-!!! warning "Local Environment Required"
-    This lab requires VS Code, Ollama, and the Continue extension.
-    It cannot run on Google Colab.
+/// warning | Local Environment Required
+This lab requires VS Code, Ollama, and the Continue extension.
+It cannot run on Google Colab.
+///
 
 1. Ensure you have completed the [Pre-work](../pre-work/README.md)
 2. Start Jupyter and open the notebook:
 
 ```shell
-jupyter notebook notebooks/MCP_Agents.ipynb
+jupyter notebook {{ notebook }}
 ```
 
 ## Lab
 
-[![Docling MCP Agents Notebook](https://badgen.net/badge/icon/github?icon=github&label=View%20on "View on GitHub")]({{ config.repo_url }}/blob/{{ git.commit }}/notebooks/MCP_Agents.ipynb){:target="_blank"}
+[![Docling MCP Agents Notebook](https://badgen.net/badge/icon/github?icon=github&label=View%20on "View on GitHub")]({{ config.repo_url }}/blob/{{ git.commit }}/{{ notebook }}){:target="_blank"}
 
 To run the notebook from your command line in Jupyter using the active
 virtual environment from the [pre-work](../pre-work/README.md#install-jupyter), run:
 
 ```shell
-jupyter notebook notebooks/MCP_Agents.ipynb
+jupyter notebook {{ notebook }}
 ```
 
 The path of the notebook file above is relative to the `docling-workshop`
@@ -67,7 +69,7 @@ folder from the git clone in the
 
 ### 1. Pull the Granite Model
 
-```bash
+```shell
 ollama pull granite3.3:8b
 ```
 

@@ -37,6 +37,7 @@ SDK's
 SmolDocling
 TPU
 url
+uv
 Vectorization
 venv
 VLM

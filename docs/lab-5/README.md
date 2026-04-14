@@ -1,10 +1,11 @@
 ---
-title: Lab 5 - Token Cost Comparison
+title: Lab 5. Token Cost Comparison
 description: Compare token costs for PDF Q&A with and without Docling preprocessing
 logo: images/DoclingDuck.png
+notebook: notebooks/Token_Cost_Comparison.ipynb
 ---
 
-# Lab 5: Comparing Token Costs for PDF Q&A with Claude
+# Comparing Token Costs for PDF Q&A with Claude
 
 In this lab, you'll compare the token cost and response quality when asking questions about a PDF using two approaches: uploading the PDF directly to Claude versus preprocessing it with Docling first.
 
@@ -43,12 +44,12 @@ Choosing the right approach can significantly reduce costs, especially for large
 2. Start Jupyter and open the notebook:
 
 ```shell
-jupyter notebook notebooks/Token_Cost_Comparison.ipynb
+jupyter notebook {{ notebook }}
 ```
 
 ### Option 2: Run on Google Colab
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ibm-granite-community/docling-workshop/blob/main/notebooks/Token_Cost_Comparison.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg "Open In Colab")]({{ extra.colab_url }}/blob/{{ git.commit }}/{{ notebook }}){:target="_blank"}
 
 ## What You'll Do
 
