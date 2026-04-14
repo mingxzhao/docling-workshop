@@ -1,10 +1,11 @@
 ---
-title: Lab 4 - Docling as a Service
+title: Lab 4. Docling as a Service
 description: Learn to deploy Docling as a REST API service
 logo: images/DoclingDuck.png
+notebook: notebooks/Serving.ipynb
 ---
 
-# Lab 4: Docling as a Service
+# Docling as a Service
 
 In this lab, you'll learn how to deploy Docling as a scalable REST API service using **docling-serve**.
 
@@ -43,21 +44,22 @@ While the Python library is great for scripts and notebooks, **docling-serve** e
 2. Start Jupyter and open the notebook:
 
 ```shell
-jupyter notebook notebooks/Serving.ipynb
+jupyter notebook {{ notebook }}
 ```
 
 ### Option 2: Run on Google Colab
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ibm-granite-community/docling-workshop/blob/main/notebooks/Serving.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg "Open In Colab")]({{ extra.colab_url }}/blob/{{ git.commit }}/{{ notebook }}){:target="_blank"}
 
-!!! note "Local Server Required"
-    This lab requires running docling-serve locally. Google Colab can be used for learning the API patterns, but you'll need a local environment to run the server.
+/// note | Local Server Required
+This lab requires running docling-serve locally. Google Colab can be used for learning the API patterns, but you'll need a local environment to run the server.
+///
 
 ## Quick Start
 
 ### Starting the Server
 
-```bash
+```shell
 # Install docling-serve
 pip install docling-serve
 
