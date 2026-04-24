@@ -1,7 +1,7 @@
 # Regenerate fixture JSONs for Lab 4 (Chunkless RAG)
 
 This directory contains the maintainer-only scripts that produce the
-enriched `DoclingDocument` JSON fixtures used by `notebooks/Chunkless RAG.ipynb`.
+enriched `DoclingDocument` JSON fixtures used by `notebooks/Chunkless_RAG.ipynb`.
 Learners never run these scripts — the notebook downloads the pre-built
 artifacts from the `fixtures/v1` release.
 
@@ -26,7 +26,7 @@ fresh copy, pull it from there and re-upload as the `fixtures/v1` asset.
 ## Regeneration workflow
 
 Prerequisites: `REPLICATE_API_TOKEN` exported, `uv` installed, current
-`docling-core`/`docling-agent`/`mellea` pins matching `notebooks/Chunkless RAG.ipynb`.
+`docling-core`/`docling-agent`/`mellea` pins matching `notebooks/Chunkless_RAG.ipynb`.
 
 ```shell
 uv pip install \

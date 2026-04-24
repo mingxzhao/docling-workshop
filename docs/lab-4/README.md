@@ -2,7 +2,7 @@
 title: Lab 4. Chunkless RAG with Docling
 description: Chunkless RAG with Docling
 logo: images/DoclingDuck.png
-notebook: notebooks/Chunkless RAG.ipynb
+notebook: notebooks/Chunkless_RAG.ipynb
 ---
 
 # Chunkless RAG with Docling
