@@ -9,7 +9,9 @@ config
 docling
 Docling
 Docling's
+embeddings
 hardcoded
+HybridChunker
 ibm
 ipynb
 ipywidgets
