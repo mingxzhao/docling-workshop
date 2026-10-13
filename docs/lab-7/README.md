@@ -71,7 +71,7 @@ folder from the git clone in the
 ### 1. Pull the Granite Model
 
 ```shell
-ollama pull granite3.3:8b
+ollama pull granite4.2:8b
 ```
 
 ### 2. Configure Continue
@@ -84,9 +84,9 @@ version: 0.0.1
 schema: v1
 
 models:
-  - name: Granite 3.3
+  - name: Granite 4.2
     provider: ollama
-    model: granite3.3:8b
+    model: granite4.2:8b
     apiBase: http://localhost:11434
     roles:
       - chat
