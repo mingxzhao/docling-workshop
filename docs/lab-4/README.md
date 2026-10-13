@@ -19,10 +19,6 @@ This lab is a [Jupyter notebook](https://jupyter.org/). Please follow the instru
 
 This lab requires either [Replicate](https://replicate.com) or [Ollama](https://ollama.com) to serve the Granite models, the same way [Lab 3](../lab-3/README.md) does.
 
-/// note | Running after Lab 2 in the same Colab session
-This lab pins `docling-core>=2.70` while Lab 2 pins `docling-core==2.63.*`. If you run both notebooks in the same Colab session, restart the runtime (`Runtime -> Restart runtime`) before opening this one so the pip install takes effect cleanly.
-///
-
 ## Lab
 
 [![# Chunkless RAG with Docling Notebook](https://badgen.net/badge/icon/github?icon=github&label=View%20on "View on GitHub")]({{ config.repo_url }}/blob/{{ git.commit }}/{{ notebook }}){:target="_blank"}

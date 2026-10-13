@@ -5,10 +5,10 @@ topical phrase per section instead of the default 2-3 sentences. Saves the
 result as ibm_annual_report_enriched_concise.json.
 """
 import os
-import importlib
 import time
 from pathlib import Path
 
+import litellm
 from docling_core.types.doc.document import DoclingDocument
 from mellea import MelleaSession
 from mellea.backends import model_ids
@@ -16,28 +16,39 @@ from mellea.backends.litellm import LiteLLMBackend
 from mellea.stdlib.components import Message
 from mellea.stdlib.context import ChatContext
 
-import docling_agent.agent_models as _am
-from docling_agent.agents import DoclingEnrichingAgent
+from docling_agent.agents import BackendConfig, BaseBackend, DoclingEnrichingAgent, ModelConfig
+from docling_agent.backends.mellea_backend import MelleaSessionAdapter
 
-MODEL_ID = model_ids.IBM_GRANITE_4_1_8B
+MODEL_ID = model_ids.IBM_GRANITE_4_2_8B
 
-# --- Replicate backend monkey-patch ---
-def _make_backend(model_id):
-    return LiteLLMBackend(model_id=f"replicate/{model_id.hf_model_name}")
+# --- Replicate backend ---
+# LiteLLM stops polling a Replicate prediction after about 25 seconds by default.
+litellm.DEFAULT_REPLICATE_POLLING_RETRIES = 30
 
-def _patched_setup_local_session(*, model_id, system_prompt="You are a helpful assistant."):
-    ctx = ChatContext().add(Message(role="system", content=system_prompt))
-    m = MelleaSession(ctx=ctx, backend=_make_backend(model_id))
-    return _am._LoggingSession(m)
 
-_am.setup_local_session = _patched_setup_local_session
-for modname in ("docling_agent.agent.rag", "docling_agent.agent.enricher", "docling_agent.agent.editor"):
-    mod = importlib.import_module(modname)
-    if hasattr(mod, "setup_local_session"):
-        mod.setup_local_session = _patched_setup_local_session
+class ReplicateBackend(BaseBackend):
+    """Run every docling-agent session on Replicate through Mellea's LiteLLM backend."""
+
+    backend_type = "mellea"
+
+    def __init__(self, model_id):
+        self.model_id = model_id
+        name = model_id.hf_model_name
+        self.config = BackendConfig(models=ModelConfig(reasoning=name, writing=name))
+
+    @classmethod
+    def from_config(cls, config):
+        raise NotImplementedError("Create ReplicateBackend(model_id) directly.")
+
+    def create_session(self, *, model, system_prompt=None):
+        ctx = ChatContext()
+        if system_prompt:
+            ctx = ctx.add(Message(role="system", content=system_prompt))
+        backend = LiteLLMBackend(model_id=f"replicate/{self.model_id.hf_model_name}")
+        return MelleaSessionAdapter(MelleaSession(ctx=ctx, backend=backend))
 
 # --- Concise summary monkey-patch ---
-def _patched_generate_summary(self, *, m, text, loop_budget=2):
+def _patched_generate_summary(self, *, m, text, loop_budget=2, scope="section"):
     def _validate(content):
         c = content.strip()
         # Accept one-liner phrases up to ~150 chars, no line breaks
@@ -73,7 +84,7 @@ assert src.exists(), f"Source parsed JSON not found at {src}. Set IBM_PARSED_JSO
 
 doc = DoclingDocument.load_from_json(src)
 
-enricher = DoclingEnrichingAgent(model_id=MODEL_ID, tools=[])
+enricher = DoclingEnrichingAgent(tools=[], backend=ReplicateBackend(MODEL_ID))
 t0 = time.time()
 # Skip _fix_heading_levels — it spins up the editor for extra LLM calls we don't need.
 result = enricher._summarize_items(document=doc, fix_heading_levels=False, loop_budget=2)

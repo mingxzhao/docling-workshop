@@ -39,9 +39,9 @@ Prerequisites: `REPLICATE_API_TOKEN` exported, `uv` installed, current
 ```shell
 uv pip install \
     "docling>=2.40" \
-    "docling-core>=2.70,<3" \
-    "docling-agent==0.1.0" \
-    "mellea[litellm]==0.5.*"
+    "docling-core>=2.79,<3" \
+    "docling-agent==0.6.*" \
+    "mellea[litellm]==0.8.*"
 
 python scripts/regenerate_fixtures/reenrich_ibm_concise.py
 ```
