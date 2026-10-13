@@ -15,7 +15,7 @@ This guide covers common issues you might encounter during the workshop and thei
 **Problem**: Assertion error about Python version
 
 ```text
-AssertionError: Use Python 3.10, 3.11, 3.12, or 3.13 to run this notebook.
+AssertionError: Use Python 3.11, 3.12, or 3.13 to run this notebook.
 ```
 
 **Solution**:
@@ -74,16 +74,20 @@ AssertionError: Use Python 3.10, 3.11, 3.12, or 3.13 to run this notebook.
 
 ### VLM Models Won't Load
 
-**Problem**: Error loading SmolDocling or Granite Vision models
+**Problem**: Error loading Granite-Docling or Granite Vision models
 
 **Solution**:
 
 1. Check available memory - VLM models require 4-8 GB RAM
 2. Try a smaller model first
-3. For Apple Silicon, ensure MLX backend is used:
+3. On Apple Silicon, the `granite_docling` preset uses the MLX build automatically. Make sure MLX is installed with `docling[vlm]`:
 
     ```python
-    from docling.datamodel.pipeline_options import smoldocling_vlm_mlx_conversion_options
+    from docling.datamodel.pipeline_options import VlmConvertOptions, VlmPipelineOptions
+
+    vlm_pipeline_options = VlmPipelineOptions(
+        vlm_options=VlmConvertOptions.from_preset("granite_docling"),
+    )
     ```
 
 ### Ollama/LM Studio Connection Errors
@@ -218,21 +222,14 @@ AssertionError: Use Python 3.10, 3.11, 3.12, or 3.13 to run this notebook.
 
 ## Vector Database Issues
 
-### Milvus Lite Errors
+### Duplicate or Stale Results from ChromaDB
 
-**Problem**: Database connection or storage errors
+**Problem**: Retrieval returns chunks from an earlier run, or the same chunk twice
 
 **Solution**:
 
-1. Use a fresh database file:
-
-    ```python
-    import tempfile
-    db_file = tempfile.NamedTemporaryFile(suffix=".db", delete=False).name
-    ```
-
-2. Ensure you have write permissions to the directory
-3. Check disk space is available
+1. The RAG notebooks keep ChromaDB in memory, so restart the kernel and run the cells in order
+2. After switching the embeddings model, rebuild the vector database: embeddings from different models can't be mixed
 
 ## Jupyter Notebook Issues
 
@@ -253,11 +250,10 @@ AssertionError: Use Python 3.10, 3.11, 3.12, or 3.13 to run this notebook.
 
 **Solution**:
 
-1. Install the widget extension:
+1. Install ipywidgets in the same environment as Jupyter:
 
     ```shell
     pip install ipywidgets
-    jupyter nbextension enable --py widgetsnbextension
     ```
 
 2. Restart Jupyter after installation

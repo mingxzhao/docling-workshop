@@ -1,6 +1,7 @@
 Anthropic
 backend
 cd
+ChromaDB
 Chunkless
 chunkless
 colab

@@ -22,7 +22,7 @@ By the end of this lab, you will:
 
 ## Prerequisites
 
-- Python 3.10 or later
+- Python 3.11 or later
 - Completed Labs 1-3 (recommended)
 - Basic understanding of REST APIs
 

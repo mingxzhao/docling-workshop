@@ -2,7 +2,7 @@
 name = "docling-workshop"
 version = "1.0.0"
 description = "Docling Workshop - Learn document processing with AI"
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 readme = "README.md"
 license = {text = "Apache-2.0"}
 authors = [
@@ -33,9 +33,8 @@ lab3 = [
     "docling",
     "transformers",
     "pillow",
-    "langchain>=0.3",
-    "langchain-core>=0.3",
-    "langchain-community",
+    "langchain-core",
+    "langchain-classic",
     "langchain-huggingface",
     "sentence-transformers",
     "langchain-chroma",
@@ -44,22 +43,27 @@ lab3 = [
     "matplotlib",
 ]
 lab4 = [
+    "docling-core>=2.79,<3",
+    "docling-agent==0.6.*",
+    "mellea[litellm]==0.8.*",
+]
+lab5 = [
     "docling-serve",
     "httpx",
 ]
-lab5 = [
+lab6 = [
     "docling",
-    "anthropic>=0.40.0",
-    "PyPDF2>=3.0.0",
+    "anthropic",
+    "pypdf",
     "httpx",
 ]
-lab6 = [
+lab7 = [
     "docling-mcp",
     "mcp",
     "httpx",
 ]
 all = [
-    "docling-workshop[lab1,lab2,lab3,lab4,lab5,lab6]",
+    "docling-workshop[lab1,lab2,lab3,lab4,lab5,lab6,lab7]",
 ]
 dev = [
     "jupyter",

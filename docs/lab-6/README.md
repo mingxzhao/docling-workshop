@@ -13,14 +13,14 @@ In this lab, you'll compare the token cost and response quality when asking ques
 
 By the end of this lab, you will:
 
-- Understand how Claude processes uploaded PDFs (vision-based, ~1,500-3,000 tokens per page)
+- Understand how Claude processes uploaded PDFs (text plus a page image: ~1,500-3,000 text tokens per page, plus image tokens)
 - Extract text from PDFs using Docling and count tokens with the Anthropic SDK
 - Calculate and compare costs across Claude model tiers
 - Evaluate the trade-offs between direct upload and Docling preprocessing
 
 ## Prerequisites
 
-- Python 3.10 or later
+- Python 3.11 or later
 - Completed Labs 1-2 (recommended)
 - A PDF document to analyze
 - (Optional) An Anthropic API key for accurate token counting
@@ -32,7 +32,7 @@ When using Claude for PDF Q&A, you have two options:
 
 | Approach | How It Works | Token Impact |
 | ---------- | ------------- | -------------- |
-| **Direct Upload** | Claude processes each page as an image + text | ~1,500-3,000 tokens per page |
+| **Direct Upload** | Claude processes each page as an image + text | ~1,500-3,000 text tokens per page, plus image tokens |
 | **Docling Preprocessing** | Extract text first, send only the text to Claude | Typically fewer tokens for text-heavy documents |
 
 Choosing the right approach can significantly reduce costs, especially for large or text-heavy documents.
@@ -71,6 +71,6 @@ jupyter notebook {{ notebook }}
 
 ## Resources
 
-- [Anthropic Token Counting API](https://docs.anthropic.com/en/docs/build-with-claude/token-counting)
+- [Anthropic Token Counting API](https://platform.claude.com/docs/en/build-with-claude/token-counting)
 - [Docling Documentation](https://docling-project.github.io/docling/)
-- [Claude Pricing](https://www.anthropic.com/pricing)
+- [Claude API Pricing](https://platform.claude.com/docs/en/about-claude/pricing)

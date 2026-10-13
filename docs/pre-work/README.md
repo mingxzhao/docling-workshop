@@ -142,7 +142,7 @@ This was tested on a MacBook with an M1 processor and 32GB RAM. It maybe possibl
 ///
 
 /// tip | Apple Silicon
-If you have a Mac with Apple Silicon (M1/M2/M3), Ollama can leverage the Metal GPU for accelerated inference.
+If you have a Mac with Apple Silicon (M1/M2/M3), LM Studio can leverage the Metal GPU and MLX models for accelerated inference.
 ///
 
 If you computer is unable to serve the models, then it is recommended to go to the [Replicate AI Cloud Platform](#replicate-ai-cloud-platform) section instead.
