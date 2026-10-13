@@ -23,6 +23,7 @@ By the end of this lab, you will:
 - Python 3.10 or later
 - [VS Code](https://code.visualstudio.com/) installed
 - [Ollama](https://ollama.ai/) installed
+- docling-serve from [Lab 5](../lab-5/README.md) running (`docling-serve run`)
 - Completed Labs 1-4 (recommended)
 
 ## Why MCP?
@@ -100,7 +101,12 @@ mcpServers:
     args:
       - --from=docling-mcp
       - docling-mcp-server
+      - --transport=stdio
+    env:
+      DOCLING_MCP_SERVICE_URL: http://localhost:5001
 ```
+
+docling-mcp sends conversions to the Docling service at `DOCLING_MCP_SERVICE_URL`, here the docling-serve instance from Lab 5. `--transport=stdio` is required because otherwise the server starts as an HTTP server instead.
 
 ### 3. Use in Agent Mode
 
@@ -114,15 +120,17 @@ Convert https://arxiv.org/pdf/2501.17887 and summarize the key findings
 
 | Tool | Description |
 | :--- | :--- |
-| `convert_document` | Convert a document (URL or local path) to structured JSON |
+| `convert_document_into_docling_document` | Convert a document (URL or local path) and return its document key |
 | `create_new_docling_document` | Create a new empty document |
 | `add_title_to_docling_document` | Add a document title |
 | `add_section_heading_to_docling_document` | Add a section heading |
 | `add_paragraph_to_docling_document` | Add a paragraph |
 | `open_list_in_docling_document` | Open a list structure |
-| `add_listitem_to_list_in_docling_document` | Add a list item |
+| `add_list_items_to_list_in_docling_document` | Add items to an open list |
 | `close_list_in_docling_document` | Close the current list |
-| `export_docling_document_to_markdown` | Export the document as Markdown |
+| `export_docling_document_to_markdown` | Export a cached document as Markdown |
+
+The notebook lists the full set, including the document manipulation tools.
 
 ## Resources
 
