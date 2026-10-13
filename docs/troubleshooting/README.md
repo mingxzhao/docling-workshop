@@ -158,6 +158,36 @@ AssertionError: Use Python 3.10, 3.11, 3.12, or 3.13 to run this notebook.
     doc = DoclingDocument.load_from_json("document.json")
     ```
 
+## Docling Service Issues
+
+### Notebook Still Converts Locally
+
+**Problem**: The notebook prints `Docling conversions will run locally` although you set up a Docling service
+
+**Solution**:
+
+1. Check the variable name is exactly `DOCLING_SERVICE_URL`
+2. If you exported it in a terminal, restart Jupyter from that terminal so the kernel sees it
+3. For Colab, check the Secrets tab has the value and notebook access is enabled
+
+### Authentication Errors
+
+**Problem**: `ServiceError` with `status=401`
+
+**Solution**: Check `DOCLING_SERVICE_API_KEY` holds the API key for the service at `DOCLING_SERVICE_URL`
+
+### Conversion Timeouts
+
+**Problem**: `TaskTimeoutError` for large documents or picture descriptions
+
+**Solution**: Give the client more time, for example `DoclingServiceClient(url=..., api_key=..., job_timeout=1800)`
+
+### Usage Limits
+
+**Problem**: `UsageLimitExceededError`
+
+**Solution**: Your service plan or trial has reached its page limit. Check your plan, or unset `DOCLING_SERVICE_URL` to run Docling locally.
+
 ## Replicate API Issues
 
 ### Rate Limiting

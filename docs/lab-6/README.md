@@ -24,6 +24,7 @@ By the end of this lab, you will:
 - Completed Labs 1-2 (recommended)
 - A PDF document to analyze
 - (Optional) An Anthropic API key for accurate token counting
+- (Optional) A hosted Docling service to run the conversion, see [Run Docling on a Hosted Service](../pre-work/README.md#optional-run-docling-on-a-hosted-service)
 
 ## Why Compare Approaches?
 
