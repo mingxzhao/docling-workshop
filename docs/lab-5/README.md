@@ -66,7 +66,7 @@ pip install docling-serve
 # Start the server
 docling-serve run
 
-# Server runs at http://localhost:5000
+# Server runs at http://localhost:5001
 ```
 
 ### Making a Request
@@ -79,15 +79,14 @@ response = httpx.post(
     json={
         "sources": [{"kind": "http", "url": "https://arxiv.org/pdf/2501.17887"}],
         "options": {
-            "do_ocr": False,  # Set True if easyocr is installed
-            "pdf_backend": "dlparse_v2",
+            "do_ocr": False,  # Set True for scanned documents
         }
     },
     timeout=120.0
 )
 
 result = response.json()
-print(result.get('md', '')[:500])
+print(result["document"]["md_content"][:500])
 ```
 
 ## Key API Endpoints
@@ -97,17 +96,18 @@ print(result.get('md', '')[:500])
 | `/health` | GET | Health check |
 | `/v1/convert/source` | POST | Convert from URL |
 | `/v1/convert/file` | POST | Convert uploaded file |
+| `/v1/chunk/hybrid/source` | POST | Convert and chunk for RAG |
 | `/docs` | GET | OpenAPI documentation |
 
 ## Docker Deployment
 
 ```bash
 # Run with Docker
-docker run -p 5000:5000 quay.io/docling-project/docling-serve
+docker run -p 5001:5001 quay.io/docling-project/docling-serve
 ```
 
 ## Resources
 
 - [docling-serve GitHub](https://github.com/docling-project/docling-serve)
-- [API Documentation](http://localhost:5000/docs) (when server is running)
+- [API Documentation](http://localhost:5001/docs) (when server is running)
 - [Docling Documentation](https://docling-project.github.io/docling/)

@@ -17,6 +17,11 @@ repo — it ships as test data in the `docling-agent` repo at
 `tests/data/2408.09869v5-hierarchical-with-summaries.json`. If you need a
 fresh copy, pull it from there and re-upload as the `fixtures/v1` asset.
 
+The `fixtures/v1` release also hosts `AR_2020_WEB2.pdf`, the Midwest Food Bank
+2020 annual report used by the chunking and RAG notebooks. It is a copy of
+<https://web.archive.org/web/20230523232035if_/https://www.midwestfoodbank.org/images/AR_2020_WEB2.pdf>,
+mirrored because web.archive.org intermittently returns 503 errors in CI.
+
 ## Scripts
 
 - `reenrich_ibm_concise.py` — loads a Docling-parsed IBM 2025 annual report
