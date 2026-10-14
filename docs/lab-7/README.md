@@ -16,21 +16,21 @@ By the end of this lab, you will:
 - Understand what MCP is and how it enables AI agents to use tools
 - Set up the docling-mcp server with Continue and Granite via Ollama
 - Use Docling tools through natural language in an AI agent
-- Compare MCP-based integration with REST API integration (Lab 4)
+- Compare MCP-based integration with REST API integration (Lab 5)
 
 ## Prerequisites
 
-- Python 3.10 or later
+- Python 3.11 or later
 - [VS Code](https://code.visualstudio.com/) installed
 - [Ollama](https://ollama.ai/) installed
 - docling-serve from [Lab 5](../lab-5/README.md) running (`docling-serve run`)
-- Completed Labs 1-4 (recommended)
+- Completed Labs 1-5 (recommended)
 
 ## Why MCP?
 
-In Lab 4, *you* wrote code to call the Docling REST API. With MCP, the *AI agent* discovers and calls Docling tools autonomously based on your natural language requests.
+In Lab 5, *you* wrote code to call the Docling REST API. With MCP, the *AI agent* discovers and calls Docling tools autonomously based on your natural language requests.
 
-| Feature | REST API (Lab 4) | MCP (Lab 6) |
+| Feature | REST API (Lab 5) | MCP (Lab 7) |
 | :--- | :--- | :--- |
 | Consumer | Your application code | AI agents/LLMs |
 | Discovery | Read API docs manually | Tools auto-discovered by LLM |
@@ -71,7 +71,7 @@ folder from the git clone in the
 ### 1. Pull the Granite Model
 
 ```shell
-ollama pull granite3.3:8b
+ollama pull granite4.2:8b
 ```
 
 ### 2. Configure Continue
@@ -84,9 +84,9 @@ version: 0.0.1
 schema: v1
 
 models:
-  - name: Granite 3.3
+  - name: Granite 4.2
     provider: ollama
-    model: granite3.3:8b
+    model: granite4.2:8b
     apiBase: http://localhost:11434
     roles:
       - chat

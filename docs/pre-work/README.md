@@ -114,7 +114,7 @@ Running Ollama locally on your computer requires the following steps:
 1. Pull the Granite model:
 
     ```shell
-    ollama pull granite3.3:8b
+    ollama pull granite4.2:8b
     ollama pull granite3.2-vision:2b
     ```
 
@@ -142,7 +142,7 @@ This was tested on a MacBook with an M1 processor and 32GB RAM. It maybe possibl
 ///
 
 /// tip | Apple Silicon
-If you have a Mac with Apple Silicon (M1/M2/M3), Ollama can leverage the Metal GPU for accelerated inference.
+If you have a Mac with Apple Silicon (M1/M2/M3), LM Studio can leverage the Metal GPU and MLX models for accelerated inference.
 ///
 
 If you computer is unable to serve the models, then it is recommended to go to the [Replicate AI Cloud Platform](#replicate-ai-cloud-platform) section instead.
@@ -153,7 +153,7 @@ Running LM Studio locally on your computer requires the following steps:
 
 1. Download the Granite Vision model:
     - Open LM Studio and go to the "Discover" tab
-    - Search for `granite-vision` or `granite-3.3`
+    - Search for `granite-vision` or `granite`
     - Download a model (e.g., `granite-vision-3.3-2b`)
 
 1. Start the local server:
