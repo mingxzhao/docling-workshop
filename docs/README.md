@@ -51,6 +51,7 @@ The technology used in the workshop is as follows:
 * [LangChain](https://www.langchain.com/)
 * [Replicate](https://replicate.com/)
 * [IBM Granite AI foundation models](https://www.ibm.com/granite)
+* [Docling for IBM watsonx](https://www.ibm.com/products/docling) (optional)
 
 ## Credits
 

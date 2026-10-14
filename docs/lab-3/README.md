@@ -15,6 +15,8 @@ In this lab we will combine the skills we learned in the two previous labs to bu
 
 This lab is a [Jupyter notebook](https://jupyter.org/). Please follow the instructions in [pre-work](../pre-work/README.md) to run the lab.
 
+To run the conversions on a hosted Docling service instead of your own machine, see [Run Docling on a Hosted Service](../pre-work/README.md#optional-run-docling-on-a-hosted-service).
+
 This lab has two options for running. The first will be using Replicate, and the second will be using Ollama to run entirely locally.
 
 ## Lab

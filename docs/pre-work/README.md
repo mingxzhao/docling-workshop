@@ -264,3 +264,31 @@ The labs require Granite models to be served by an AI model runtime so that the 
 1. Add your Replicate API Token to the Colab Secrets manager to securely store it. Open [Google Colab](https://colab.research.google.com) and click on the 🔑 Secrets tab in the left panel. Click "Add new secret" and enter `REPLICATE_API_TOKEN` into the name field and paste your token into the value field. Toggle the button on the left to allow notebook access to the secret.
 
 ![Colab Secrets](../images/colab-secrets.png)
+
+## Optional: Run Docling on a Hosted Service
+
+By default the notebooks run Docling on your computer or Colab runtime, which downloads Docling's AI models and can be slow without a GPU. The document conversion, chunking, RAG, and token cost notebooks can instead send their conversions to a Docling service:
+
+- [Docling for IBM watsonx](https://www.ibm.com/products/docling) is IBM's managed Docling service. Start a free trial from the product page, then copy your service URL and API key.
+- Any docling-serve instance works too, including the one you run in [Lab 5](../lab-5/README.md).
+
+Give the notebooks the service URL and API key:
+
+/// tab | Local
+
+```shell
+export DOCLING_SERVICE_URL=<your_docling_service_url>
+export DOCLING_SERVICE_API_KEY=<your_docling_api_key>
+```
+
+You can also put the two settings in a `.env` file in the `docling-workshop` folder.
+
+///
+
+/// tab | Colab
+
+Add `DOCLING_SERVICE_URL` and `DOCLING_SERVICE_API_KEY` to the Colab Secrets manager, the same way as `REPLICATE_API_TOKEN`, and allow notebook access.
+
+///
+
+Each notebook prints whether it converts locally or on the service. Leave `DOCLING_SERVICE_URL` unset to run Docling locally.

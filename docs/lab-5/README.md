@@ -17,6 +17,7 @@ By the end of this lab, you will:
 - Make HTTP requests to convert documents
 - Use the chunking API for RAG applications
 - Batch process multiple documents
+- Use the Docling Python client with docling-serve or a hosted Docling service
 - Deploy docling-serve with Docker
 
 ## Prerequisites

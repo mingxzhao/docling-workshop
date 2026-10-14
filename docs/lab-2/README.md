@@ -15,6 +15,8 @@ In this lab we will explore the importance of chunking and the capabilities Docl
 
 This lab is a [Jupyter notebook](https://jupyter.org/). Please follow the instructions in [pre-work](../pre-work/README.md) to run the lab.
 
+To run the conversions on a hosted Docling service instead of your own machine, see [Run Docling on a Hosted Service](../pre-work/README.md#optional-run-docling-on-a-hosted-service).
+
 ## Lab
 
 [![# Enhanced Chunking and Vectorization with Docling Notebook](https://badgen.net/badge/icon/github?icon=github&label=View%20on "View on GitHub")]({{ config.repo_url }}/blob/{{ git.commit }}/{{ notebook }}){:target="_blank"}
